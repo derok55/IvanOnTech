@@ -1,37 +1,133 @@
-## Welcome to GitHub Pages
+<html>
 
-You can use the [editor on GitHub](https://github.com/derok55/IvanOnTech/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+  <head>
+    <title>Rock Paper Scissors</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    <body>
+      <h1>Welcome to the "Rock, Paper, Scissors" Game!</h1>
+      <h2>Here are the rules: Click one of the three buttons below.
+        <br> Then the results will print to the screen so you can see if you won, lost, or tied.
+        <br> You will see a running tally of your results if you keep playing!</h2>
 
-### Markdown
+      <button id = "rock">Rock</button>
+      <button id = "paper">Paper</button>
+      <button id = "scissors">Scissors</button>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+      <h3>Stats will appear below:</h3>
 
-```markdown
-Syntax highlighted code block
+      <script>
 
-# Header 1
-## Header 2
-### Header 3
+        var winCounter = 0;
+        var tieCounter = 0;
+        var lossCounter = 0;
+        var playCount = 0;
 
-- Bulleted
-- List
+        //Rock Button Function
+        $("#rock").click(function() {
 
-1. Numbered
-2. List
+        var ComputerChoice = Math.floor((Math.random() * 3) + 1);
 
-**Bold** and _Italic_ and `Code` text
+        if (ComputerChoice == 1 ) {
+          var outcome = "Rock";
+          $("h3").append("<br>" + "Computer chose Rock!");
+        }
+        else if (ComputerChoice == 2) {
+          var outcome = "Paper";
+          $("h3").append("<br>" + "Computer chose Paper!");
+        }
+        else if (ComputerChoice == 3) {
+          var outcome = "Scissors";
+          $("h3").append("<br>" + "Computer chose Scissors!");
+        }
+        if (outcome == "Rock") {
+          $("h3").append("<br>" + "You tied!");
+          tieCounter ++;
+        }
+        else if (outcome == "Paper") {
+          $("h3").append("<br>" + "That counts as a loss.");
+          lossCounter ++;
+        }
+        else if (outcome == "Scissors") {
+          $("h3").append("<br>" + "You won!");
+          winCounter ++;
+        }
+        playCount ++;
+        $("h3").append(" Wins: " + winCounter + " Losses: " + lossCounter + " Ties: " + tieCounter + " Win Percentage: %" + winCounter/playCount*100);
+      })
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+      //Paper Button Function
+            $("#paper").click(function() {
 
-### Jekyll Themes
+            var ComputerChoice = Math.floor((Math.random() * 3) + 1);
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/derok55/IvanOnTech/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+            if (ComputerChoice == 1 ) {
+              var outcome = "Rock";
+              $("h3").append("<br>" + "Computer chose Rock!");
+            }
+            else if (ComputerChoice == 2) {
+              var outcome = "Paper";
+              $("h3").append("<br>" + "Computer chose Paper!");
+            }
+            else if (ComputerChoice == 3) {
+              var outcome = "Scissors";
+              $("h3").append("<br>" + "Computer chose Scissors!");
+            }
+            if (outcome == "Rock") {
+              $("h3").append("<br>" + "You Won!");
+              winCounter ++;
+            }
+            else if (outcome == "Paper") {
+              $("h3").append("<br>" + "You tied!");
+              tieCounter ++;
+            }
+            else if (outcome == "Scissors") {
+              $("h3").append("<br>" + "That counts as a loss.");
+              lossCounter ++;
+            }
+            playCount ++;
+            $("h3").append(" Wins: " + winCounter + " Losses: " + lossCounter + " Ties: " + tieCounter + " Win Percentage: %" + winCounter/playCount*100);
+            })
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+            //Scissors Button Function
+            $("#scissors").click(function() {
+
+            var ComputerChoice = Math.floor((Math.random() * 3) + 1);
+
+            if (ComputerChoice == 1 ) {
+              var outcome = "Rock";
+              $("h3").append("<br>" + "Computer chose Rock!");
+            }
+            else if (ComputerChoice == 2) {
+              var outcome = "Paper";
+              $("h3").append("<br>" + "Computer chose Paper!");
+            }
+            else if (ComputerChoice == 3) {
+              var outcome = "Scissors";
+              $("h3").append("<br>" + "Computer chose Scissors!");
+            }
+            if (outcome == "Rock") {
+              $("h3").append("<br>" + "That counts as a loss.");
+              lossCounter ++;
+            }
+            else if (outcome == "Paper") {
+              $("h3").append("<br>" + "You won!");
+              winCounter ++;
+            }
+            else if (outcome == "Scissors") {
+              $("h3").append("<br>" + "You tied!");
+              tieCounter ++;
+            }
+            playCount ++;
+            $("h3").append(" Wins: " + winCounter + " Losses: " + lossCounter + " Ties: " + tieCounter + " Win Percentage: %" + winCounter/playCount*100);
+            })
+
+      </script>
+
+    </body>
+
+  </html>
